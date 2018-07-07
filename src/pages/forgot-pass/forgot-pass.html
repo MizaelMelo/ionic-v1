@@ -1,0 +1,38 @@
+<ion-content class="login-content">
+  <ion-row class="logo-row">
+    <ion-col></ion-col>
+    <ion-col width-67>
+      <img src="http://placehold.it/300x200" />
+    </ion-col>
+    <ion-col></ion-col>
+  </ion-row>
+  <div class="login-box">
+    <form>
+      <ion-row>
+        <ion-col>
+            <span ion-text color="danger" class="msg">{{ msg }}</span>
+          <ion-list inset>
+
+            <ion-item>
+              <ion-input type="email" formControlEmail="email" placeholder="Informe seu e-mail" name="email" [(ngModel)]="emailLogin" (keyup)="verifyEmail()"></ion-input>
+            </ion-item>
+
+            <button ion-button class="register-btn" block clear (click)="pushLogin()">Voltar para a tela login</button>
+          </ion-list>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col class="signup-col">
+
+          <button ion-button class="submit-btn btn-forgot" [disabled]="isDisabled" (click)="forgotPassword()" full type="submit">
+            <p>Entrar</p>
+          </button>
+          </ion-col>
+
+      </ion-row>
+
+    </form>
+  </div>
+</ion-content>
+

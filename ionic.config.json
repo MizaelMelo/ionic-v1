@@ -1,0 +1,8 @@
+{
+  "name": "Busqueja",
+  "app_id": "88a2692d",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}

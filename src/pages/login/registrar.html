@@ -1,0 +1,68 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Cadastre-se
+    </ion-title>
+    <ion-buttons start>
+      <button ion-button (click)="dismiss()">
+        <span ion-text color="primary">Cancelar</span>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding class="register">
+    <div class="login-box">
+      <form #registerForm="ngForm">
+
+        <ion-row>
+          <ion-col>
+            <ion-list inset>
+
+              <ion-item>
+              <ion-label floating>Email</ion-label>
+                <ion-input type="text" name="email" required></ion-input>
+              </ion-item>
+
+              <ion-item>
+                <ion-label floating>Senha</ion-label>
+                <ion-input type="password" name="password" required></ion-input>
+              </ion-item>
+
+              <ion-item>
+                <ion-label floating>Confirme sua Senha</ion-label>
+                <ion-input type="password" name="password" required></ion-input>
+              </ion-item>
+
+              <ion-item>
+                  <ion-label floating>Estado</ion-label>
+                  <ion-select>
+                    <ion-option *ngFor="let est of states" (ionSelect)="getCity($event)" value="{{est.id}}">{{est.Sigla}}</ion-option>
+                  </ion-select>
+              </ion-item>
+
+              <ion-item>
+                <ion-label floating>Cidade</ion-label>
+                <ion-select>
+                  <ion-option *ngFor="let city of cities" value="{{city.id}}">{{city.description}}</ion-option>
+                </ion-select>
+              </ion-item>
+
+              <ion-item>
+                  <ion-label>Data de Nascimento</ion-label>
+                  <ion-datetime displayFormat="MM/DD/YYYY" name="dt_nascimento"></ion-datetime>
+              </ion-item>
+
+            </ion-list>
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col class="signup-col">
+            <button ion-button class="submit-btn" full type="submit" [disabled]="!registerForm.form.valid" (click)="novoUsuario()" >Confirmar</button>
+          </ion-col>
+        </ion-row>
+
+      </form>
+    </div>
+  </ion-content>
